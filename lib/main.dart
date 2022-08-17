@@ -3,6 +3,13 @@ import 'package:get/get.dart';
 
 import 'Load.dart';
 
+class Palatte{
+  static const mygray = Color(0xffF3EFE6);
+  static const mynavy = Color(0xff1768B7);
+  static const myskyblue = Color(0xffC8D2ED);
+  static const myyellow = Color(0xffFCE298);
+  static const myblue = Color(0xff2B86DF);
+}
 
 void main() => runApp(MyApp());
 
