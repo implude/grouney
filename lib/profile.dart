@@ -15,7 +15,7 @@ class _ProfileState extends State<Profile> {
     return MaterialApp(
       theme: ThemeData(fontFamily: 'Kopub'),
       home: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(title: Text('Grouney'),backgroundColor: mynavy,),
       ),
     );
   }
