@@ -25,7 +25,12 @@ class _LoadState extends State<Load> {
                 fontFamily: 'KBIZgo'
               ),
             ),
-            Text(':그룹여행 그러니')
+            Text(':그룹여행 그러니',
+              style: TextStyle(
+                fontSize: 25,
+                fontFamily: 'Kbizgo'
+              ),
+            )
           ],
         ),
       ),
