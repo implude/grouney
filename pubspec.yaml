@@ -74,6 +74,16 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
+    - family: Kopub
+      fonts:
+        - asset: assets/fonts/KoPubWorld Dotum_Pro Bold.otf
+        - weight: 700
+
+        - asset: assets/fonts/KoPubWorld Dotum_Pro Light.otf
+        - weight: 300
+
+        - asset: assets/fonts/KoPubWorld Dotum_Pro Medium.otf
+        - weight: 500
     - family: KBIZgo
       fonts:
         - asset: assets/fonts/KBIZ한마음고딕 B.ttf
