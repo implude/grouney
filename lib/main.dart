@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:grouney/home.dart';
+import 'package:grouney/profile.dart';
 import 'Load.dart';
 
-class Palatte{
+class Palatte {
   static const mygray = Color(0xffF3EFE6);
   static const mynavy = Color(0xff1768B7);
   static const myskyblue = Color(0xffC8D2ED);
@@ -20,8 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       home: Load(),
-
-      initialRoute: '/',
+      initialRoute: '/home',
       getPages: [
         GetPage(name: '/', page: () => Load()),
         GetPage(name: '/profile', page: () => Profile()),
