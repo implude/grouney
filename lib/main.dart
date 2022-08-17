@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 
 import 'Load.dart';
 
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -13,11 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       home: Load(),
-
       initialRoute: '/',
-      getPages: [
-
-      ],
+      getPages: [],
     );
   }
 }
