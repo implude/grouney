@@ -1,4 +1,5 @@
 # grouney
+<<<<<<< HEAD
 
 A new Flutter project.
 
@@ -14,3 +15,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+임플루드 일반동아리 프로젝트
+>>>>>>> 5eb6932c8f948d8b5eb7a4d96bed22d16f03b18e
