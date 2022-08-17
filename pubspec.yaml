@@ -82,7 +82,7 @@ flutter:
         - asset: assets/fonts/KBIZ한마음고딕 H.ttf
           weight: 900
 
-        - asset: assets/fonts/KBIZ한마음고딕 H.ttf
+        - asset: assets/fonts/KBIZ한마음고딕 L.ttf
           weight: 300
 
         - asset: assets/fonts/KBIZ한마음고딕 M.ttf
