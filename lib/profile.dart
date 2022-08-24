@@ -10,9 +10,56 @@ class Profile extends StatefulWidget {
   State<Profile> createState() => _ProfileState();
 }
 
+
 class _ProfileState extends State<Profile> {
   String userName = "사용자";
   String userID = "@123123123";
+  //여행지 사진 주소 맵
+  Map img = <int, String>{
+    1: 'https://res.klook.com/image/upload/Mobile/City/g9ynzkjz1nsrvhrjml4j.jpg',
+    2: 'https://res.klook.com/image/upload/Mobile/City/g9ynzkjz1nsrvhrjml4j.jpg',
+  };
+  Map title = <int, String>{
+    1: '부산(임플 2조, 당일치기)',
+    2: '부산(혼자여행, 1박 2일)'
+  };
+  Map route = <int, String>{
+    1: '뭔가 DB 통해 보여주면 되지',
+    2: '않을까 싶은데...'
+  };
+
+  Column myRoute(int num, ){
+    return Column(
+      
+      children: [
+        Row(
+          children: [
+            Expanded(child: Image.network(img[num], width: MediaQuery.of(context).size.width*0.04, height: MediaQuery.of(context).size.height*0.1, fit: BoxFit.fill,)),
+            SizedBox(width: MediaQuery.of(context).size.height*0.02,),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children:[
+                  Text(
+                    '${title[num]}',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w700, fontSize: 20, fontFamily: 'KBIZgo', color: Colors.black),
+                  ),
+                  SizedBox(height: MediaQuery.of(context).size.height*0.005,),
+                  Text(
+                    '${route[num]}',
+                    style: TextStyle(
+                        fontSize: 14, color: Colors.grey),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+        SizedBox(height: MediaQuery.of(context).size.height*0.02,),
+      ],
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +103,7 @@ class _ProfileState extends State<Profile> {
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+                margin: EdgeInsets.all(MediaQuery.of(context).size.width*0.005),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -67,6 +115,9 @@ class _ProfileState extends State<Profile> {
                     SizedBox(height: MediaQuery.of(context).size.height*0.005,),
                     Container(height: 3, width: MediaQuery.of(context).size.width*0.4, color: Colors.black.withOpacity(0.3),),
                     SizedBox(height: MediaQuery.of(context).size.height*0.04,),
+                    for(int num = 1; num <= 2; num++)
+                      myRoute(num),
+                    TextButton(onPressed: (){}, child: Text('더보기', style: TextStyle(color: Palatte.myblue))),
                 ],
               ),),
             ],
