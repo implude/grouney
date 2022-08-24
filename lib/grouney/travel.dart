@@ -17,12 +17,11 @@ class _TravelState extends State<Travel> {
           title: Text('Grouney',
             style: TextStyle(
               fontSize: 30,
-              fontFamily:
+              // fontFamily:
             ),
           ),
           elevation: 0.0,
           backgroundColor: Palatte.myblue,
-
         ),
       ),
     );

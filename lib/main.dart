@@ -19,13 +19,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: Load(),
-
       initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () => Load()),
-        GetPage(name: '/profile', page: () => Profile()),
-        GetPage(name: '/home', page: () => Home())
+        // GetPage(name: '/profile', page: () => Profile()),
+        // GetPage(name: '/home', page: () => Home())
       ],
     );
   }
