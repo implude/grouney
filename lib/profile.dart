@@ -103,14 +103,14 @@ class _ProfileState extends State<Profile> {
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
-                margin: EdgeInsets.all(MediaQuery.of(context).size.width*0.005),
+                margin: EdgeInsets.all(MediaQuery.of(context).size.width*0.05),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('내 예전 경로',
                       style: TextStyle(color: Palatte.mynavy,
                           fontFamily: "KBIZgo", fontWeight: FontWeight.w700, fontSize: 32),
-                    ), SizedBox(height: MediaQuery.of(context).size.height*0.01,),
+                    ), SizedBox(height: MediaQuery.of(context).size.height*0.005,),
                     Container(height: 3, width: MediaQuery.of(context).size.width*0.4, color: Colors.black.withOpacity(0.3),),
                     SizedBox(height: MediaQuery.of(context).size.height*0.005,),
                     Container(height: 3, width: MediaQuery.of(context).size.width*0.4, color: Colors.black.withOpacity(0.3),),
