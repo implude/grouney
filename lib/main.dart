@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:grouney/home.dart';
 import 'package:grouney/profile.dart';
 
-import 'Load.dart';
 
 class Palatte {
   static const mygray = Color(0xffF3EFE6);
