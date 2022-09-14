@@ -63,80 +63,85 @@ class Home extends StatelessWidget {
             vertical: context.heightTransformer(dividedBy: 20)),
         child: ListView.separated(
             physics: const BouncingScrollPhysics(),
-            itemBuilder: (_, index) =>
-                Center(child: _GroupItem(data: _dataList[index])),
+            itemBuilder: (_, index) => Center(
+                child: _GroupItem(
+                    data: index == _dataList.length ? null : _dataList[index])),
             separatorBuilder: (_, __) =>
                 SizedBox(height: context.heightTransformer(dividedBy: 50)),
-            itemCount: _dataList.length),
+            itemCount: _dataList.length + 1),
       ),
     );
   }
 }
 
 class _GroupItem extends StatelessWidget {
-  final _GroupData data;
+  final _GroupData? data;
 
-  const _GroupItem({Key? key, required this.data}) : super(key: key);
+  const _GroupItem({Key? key, this.data}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        width: context.widthTransformer(dividedBy: 1.2),
-        height: context.heightTransformer(dividedBy: 9.6),
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                scale: 0.1,
-                image: AssetImage("assets/images/group_outline.png"))),
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: context.widthTransformer(dividedBy: 10)),
-          child: Row(children: [
-            Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Text(data.name,
-                          style: const TextStyle(
-                              fontSize: 20,
-                              fontFamily: "KBIZgo",
-                              fontWeight: FontWeight.bold)),
-                      const Icon(
-                        Icons.location_on,
-                        color: Palatte.myblue,
-                        size: 40,
-                      ),
-                      Column(children: () {
-                        final formatter = DateFormat("M/dd");
-                        final range = data.dateRange;
-                        return [
-                          "${formatter.format(range.start)}~${formatter.format(
-                              range.end)}",
-                          "${data.destination} 여행"
-                        ]
-                            .map((e) =>
-                            Text(e,
-                                style: const TextStyle(
-                                    color: Palatte.myblue,
-                                    fontFamily: "KBIZgo",
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 10)))
-                            .toList();
-                      }())
-                    ],
-                  ),
-                  Text(data.people.join(", "),
-                      style: const TextStyle(
-                          color: Color(0xFFC8C8C8),
-                          fontSize: 10,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: "KBIZgo")),
-                ]),
-            const Expanded(child: SizedBox.shrink()),
-            Image.asset("assets/images/부산.png", scale: 6)
-          ]),
-        ));
+    return RawMaterialButton(
+      onPressed: () {},
+      child: Container(
+          width: context.widthTransformer(dividedBy: 1.2),
+          height: context.heightTransformer(dividedBy: 9),
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: AssetImage("assets/images/group_outline.png"))),
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: context.widthTransformer(dividedBy: 18)),
+            child: data == null
+                ? IconButton(
+                    iconSize: 32, onPressed: () {}, icon: const Icon(Icons.add))
+                : Row(children: [
+                    Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Text(data!.name,
+                                  style: const TextStyle(
+                                      fontSize: 20,
+                                      fontFamily: "KBIZgo",
+                                      fontWeight: FontWeight.bold)),
+                              const Icon(
+                                Icons.location_on,
+                                color: Palatte.myblue,
+                                size: 40,
+                              ),
+                              Column(children: () {
+                                final formatter = DateFormat("M/dd");
+                                final range = data!.dateRange;
+                                return [
+                                  "${formatter.format(range.start)}~${formatter.format(range.end)}",
+                                  "${data!.destination} 여행"
+                                ]
+                                    .map((e) => Text(e,
+                                        style: const TextStyle(
+                                            color: Palatte.myblue,
+                                            fontFamily: "KBIZgo",
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 10)))
+                                    .toList();
+                              }())
+                            ],
+                          ),
+                          Text(data!.people.join(", "),
+                              style: const TextStyle(
+                                  color: Color(0xFFC8C8C8),
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: "KBIZgo")),
+                        ]),
+                    const Expanded(child: SizedBox.shrink()),
+                    Image.asset("assets/images/부산.png", scale: 6)
+                  ]),
+          )),
+    );
   }
 }
 
