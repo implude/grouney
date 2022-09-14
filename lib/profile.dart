@@ -128,7 +128,7 @@ class _ProfileState extends State<Profile> {
                             fontFamily: 'Kopub', fontSize: 16, fontWeight: FontWeight.w500, color: Colors.black
                         ),),
                       ],
-                    ), SizedBox(width: MediaQuery.of(context).size.width*0.03,),
+                    ), SizedBox(width: MediaQuery.of(context).size.width*0.01,),
                     TextButton.icon(onPressed: (){}, icon: Icon(Icons.settings), label: Text(""))
                   ],
                 ),SizedBox(height: MediaQuery.of(context).size.height*0.03,),
