@@ -115,8 +115,8 @@ class _ProfileState extends State<Profile> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(100),
-                      child: Image.network('https://cdn.pixabay.com/photo/2020/05/17/20/21/cat-5183427_640.jpg', width: MediaQuery.of(context).size.width*0.4, height: MediaQuery.of(context).size.height*0.23, fit: BoxFit.fill,),
-                    ), SizedBox(width: 50,),
+                      child: Image.network('https://cdn.pixabay.com/photo/2020/05/17/20/21/cat-5183427_640.jpg', width: MediaQuery.of(context).size.width*0.3, height: MediaQuery.of(context).size.height*0.16, fit: BoxFit.fill,),
+                    ), SizedBox(width: MediaQuery.of(context).size.width*0.1,),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
