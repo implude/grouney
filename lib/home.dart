@@ -19,7 +19,12 @@ class Home extends StatelessWidget {
         name: "아예",
         people: ["환석김", "재신오", "승연김"],
         dateRange: DateTimeRange(start: DateTime.now(), end: DateTime.now()),
-        destination: "천춘")
+        destination: "천춘"),
+    _GroupData(
+        name: "아예",
+        people: ["환석김", "재신오", "승연김"],
+        dateRange: DateTimeRange(start: DateTime.now(), end: DateTime.now()),
+        destination: "천춘"),
   ];
 
   Home({Key? key}) : super(key: key);
