@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grouney/main.dart';
 import 'dart:ui';
 
+void main() => runApp(Profile());
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
@@ -34,11 +35,10 @@ class _ProfileState extends State<Profile> {
 
   Column myRoute(int num, ){
     return Column(
-      
       children: [
         Row(
           children: [
-            Expanded(child: Image.network(img[num], width: MediaQuery.of(context).size.width*0.04, height: MediaQuery.of(context).size.height*0.1, fit: BoxFit.fill,)),
+            Expanded(child: Image.network(img[num], width: MediaQuery.of(context).size.width*0.04, height: MediaQuery.of(context).size.height*0.1, fit: BoxFit.cover,)),
             SizedBox(width: MediaQuery.of(context).size.height*0.02,),
             Expanded(
               child: Column(
@@ -140,7 +140,7 @@ class _ProfileState extends State<Profile> {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
-                  margin: EdgeInsets.all(MediaQuery.of(context).size.width*0.05),
+                  margin: EdgeInsets.all(MediaQuery.of(context).size.width*0.025),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
