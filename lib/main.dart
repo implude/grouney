@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:grouney/profile.dart';
 
 import 'Load.dart';
 
@@ -20,11 +19,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      initialRoute: '/profile',
+      initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () => Load()),
-        GetPage(name: '/profile', page: () => Profile()),
-        // GetPage(name: '/home', page: () => Home()),
+        // GetPage(name: '/profile', page: () => Profile()),
+        // GetPage(name: '/home', page: () => Home())
       ],
     );
   }
