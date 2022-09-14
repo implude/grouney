@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grouney/home.dart';
 import 'package:grouney/profile.dart';
+
 import 'Load.dart';
 
 class Palatte {
@@ -24,8 +25,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () => Load()),
-        // GetPage(name: '/profile', page: () => Profile()),
-        // GetPage(name: '/home', page: () => Home())
+        GetPage(name: '/profile', page: () => Profile()),
+        GetPage(name: '/home', page: () => Home())
       ],
     );
   }
