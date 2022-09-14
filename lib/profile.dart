@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:grouney/main.dart';
 import 'dart:ui';
 
@@ -101,9 +102,17 @@ class _ProfileState extends State<Profile> {
     return MaterialApp(
       theme: ThemeData(fontFamily: 'Kopub'),
       home: Scaffold(
-        appBar: AppBar(title: Text('Grouney',
-          style: TextStyle(fontFamily: 'KBIZgo', fontSize: 20, fontWeight: FontWeight.w900, color: Colors.black),),
-          backgroundColor: Palatte.myskyblue,),
+        appBar: AppBar(
+            toolbarHeight: context.heightTransformer(dividedBy: 11.6),
+            automaticallyImplyLeading: false,
+            elevation: 0,
+            title: const Text(
+              "Grouney",
+              style: TextStyle(
+                  fontSize: 36, fontFamily: "KBIZgo", color: Colors.black),
+            ),
+            backgroundColor: Palatte.myskyskyblue,
+        ),
         body: Center(
           child: SingleChildScrollView(
             child: Column(

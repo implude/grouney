@@ -24,9 +24,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       initialRoute: '/',
       getPages: [
-        GetPage(name: '/', page: () => Load()),
-        GetPage(name: '/profile', page: () => Profile()),
-        GetPage(name: '/home', page: () => Home())
+        GetPage(name: '/', page: () => Home()),
+        GetPage(name: '/Profile', page: () => Profile())
       ],
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grouney/main.dart';
+import 'package:grouney/profile.dart';
 import 'package:intl/intl.dart';
 
 class Home extends StatelessWidget {
@@ -35,6 +36,7 @@ class Home extends StatelessWidget {
       appBar: AppBar(
           toolbarHeight: context.heightTransformer(dividedBy: 11.6),
           automaticallyImplyLeading: false,
+          elevation: 0,
           title: const Text(
             "Grouney",
             style: TextStyle(
@@ -48,7 +50,9 @@ class Home extends StatelessWidget {
                   backgroundColor:
                       MaterialStateProperty.all(Palatte.myskyskyblue),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed('/Profile');
+                },
                 child: const CircleAvatar(
                     radius: 28,
                     backgroundColor: Colors.black,
