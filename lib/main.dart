@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:grouney/home.dart';
+import 'package:grouney/grouney/home.dart';
+import 'package:grouney/grouney/travel.dart';
 import 'package:grouney/profile.dart';
 
 import 'Load.dart';
@@ -14,7 +15,7 @@ class Palatte {
   static const myskyskyblue = Color(0xff95C8FA);
 }
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -22,11 +23,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      initialRoute: '/',
+      initialRoute: '/home',
       getPages: [
-        GetPage(name: '/', page: () => Load()),
-        GetPage(name: '/profile', page: () => Profile()),
-        GetPage(name: '/home', page: () => Home())
+        GetPage(name: '/', page: () => const Load()),
+        GetPage(name: '/profile', page: () => const Profile()),
+        GetPage(name: '/home', page: () => Home()),
+        GetPage(name: "/travel", page: () => const Travel())
       ],
     );
   }

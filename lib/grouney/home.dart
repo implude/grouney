@@ -1,26 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grouney/main.dart';
+import 'package:grouney/models/group_data.dart';
+import 'package:grouney/widgets/appbar.dart';
 import 'package:intl/intl.dart';
 
 class Home extends StatelessWidget {
   final _dataList = [
-    _GroupData(
+    GroupData(
         name: "그룹명",
         people: ["사람1", "사람2", "사람3"],
         dateRange: DateTimeRange(start: DateTime.now(), end: DateTime.now()),
         destination: "부산"),
-    _GroupData(
+    GroupData(
         name: "임플루드",
         people: ["김석환", "김성훈", "박은서", "이동헌"],
         dateRange: DateTimeRange(start: DateTime.now(), end: DateTime.now()),
         destination: "부산"),
-    _GroupData(
+    GroupData(
         name: "아예",
         people: ["환석김", "재신오", "승연김"],
         dateRange: DateTimeRange(start: DateTime.now(), end: DateTime.now()),
         destination: "천춘"),
-    _GroupData(
+    GroupData(
         name: "아예",
         people: ["환석김", "재신오", "승연김"],
         dateRange: DateTimeRange(start: DateTime.now(), end: DateTime.now()),
@@ -32,37 +34,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          toolbarHeight: context.heightTransformer(dividedBy: 11.6),
-          automaticallyImplyLeading: false,
-          title: const Text(
-            "Grouney",
-            style: TextStyle(
-                fontSize: 36, fontFamily: "KBIZgo", color: Colors.black),
-          ),
-          backgroundColor: Palatte.myskyskyblue,
-          actions: [
-            ElevatedButton(
-                style: ButtonStyle(
-                  elevation: MaterialStateProperty.all(0.0),
-                  backgroundColor:
-                      MaterialStateProperty.all(Palatte.myskyskyblue),
-                ),
-                onPressed: () {},
-                child: const CircleAvatar(
-                    radius: 28,
-                    backgroundColor: Colors.black,
-                    child: CircleAvatar(
-                      radius: 27,
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.black,
-                      child: Icon(
-                        Icons.person,
-                        color: Colors.black,
-                        size: 40,
-                      ),
-                    )))
-          ]),
+      appBar: getDefaultAppBar(context),
       body: Padding(
         padding: EdgeInsets.symmetric(
             vertical: context.heightTransformer(dividedBy: 20)),
@@ -80,14 +52,16 @@ class Home extends StatelessWidget {
 }
 
 class _GroupItem extends StatelessWidget {
-  final _GroupData? data;
+  final GroupData? data;
 
   const _GroupItem({Key? key, this.data}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
-      onPressed: () {},
+      onPressed: () {
+        if(data != null) Get.toNamed("/travel", arguments: data);
+      },
       child: Container(
           width: context.widthTransformer(dividedBy: 1.2),
           height: context.heightTransformer(dividedBy: 9),
@@ -148,18 +122,4 @@ class _GroupItem extends StatelessWidget {
           )),
     );
   }
-}
-
-class _GroupData {
-  final String name;
-  final List<String> people;
-  final DateTimeRange dateRange;
-  final String destination;
-
-  const _GroupData({
-    required this.name,
-    required this.people,
-    required this.dateRange,
-    required this.destination,
-  });
 }
