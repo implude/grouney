@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:grouney/main.dart';
 
-PreferredSizeWidget getDefaultAppBar(BuildContext context) => AppBar(
-        toolbarHeight: context.heightTransformer(dividedBy: 11.6),
+PreferredSizeWidget getDefaultAppBar({String title = "Grouney"}) => AppBar(
+        toolbarHeight: 80,
         automaticallyImplyLeading: false,
-        title: const Text(
-          "Grouney",
-          style: TextStyle(
+        title: Text(
+          title,
+          style: const TextStyle(
               fontSize: 36, fontFamily: "KBIZgo", color: Colors.black),
         ),
         backgroundColor: Palatte.myskyskyblue,

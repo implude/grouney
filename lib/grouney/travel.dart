@@ -16,7 +16,7 @@ class _TravelState extends State<Travel> {
   Widget build(BuildContext context) {
     final data = Get.arguments as GroupData;
     return Scaffold(
-      appBar: getDefaultAppBar(context),
+      appBar: getDefaultAppBar(),
       body: Column(
         children: [
           Padding(
@@ -73,6 +73,7 @@ class _TravelState extends State<Travel> {
               color: Palatte.myskyblue,
             ),
           ),
+          const SizedBox(height: 30),
           Padding(
             padding: EdgeInsets.symmetric(
                 horizontal: context.widthTransformer(dividedBy: 8)),
@@ -119,7 +120,12 @@ class _TravelState extends State<Travel> {
                     title: "여행 경로",
                     icon: Icons.route,
                     onPressed: () {})
-              ],
+              ]
+                  .map((e) => Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: e,
+                      ))
+                  .toList(),
             ),
           )
         ],

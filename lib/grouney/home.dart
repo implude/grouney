@@ -34,7 +34,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: getDefaultAppBar(context),
+      appBar: getDefaultAppBar(),
       body: Padding(
         padding: EdgeInsets.symmetric(
             vertical: context.heightTransformer(dividedBy: 20)),
@@ -60,7 +60,7 @@ class _GroupItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return RawMaterialButton(
       onPressed: () {
-        if(data != null) Get.toNamed("/travel", arguments: data);
+        if (data != null) Get.toNamed("/travel", arguments: data);
       },
       child: Container(
           width: context.widthTransformer(dividedBy: 1.2),
