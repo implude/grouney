@@ -4,14 +4,9 @@ import 'package:grouney/main.dart';
 import 'package:grouney/models/group_data.dart';
 import 'package:grouney/widgets/appbar.dart';
 
-class Travel extends StatefulWidget {
+class Travel extends StatelessWidget {
   const Travel({Key? key}) : super(key: key);
 
-  @override
-  State<Travel> createState() => _TravelState();
-}
-
-class _TravelState extends State<Travel> {
   @override
   Widget build(BuildContext context) {
     final data = Get.arguments as GroupData;
